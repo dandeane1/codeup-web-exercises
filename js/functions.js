@@ -84,12 +84,12 @@ console.log(isTwo(1))
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-//     function calculateTip (theTip, total) {
-//     return theTip * total
-// }
-//     console.log(calculateTip( .20, 20));
-//     console.log(calculateTip( .25, 25.50));
-//     console.log(calculateTip( .15, 33.42));
+    function calculateTip (theTip, totalCost) {
+    return theTip * totalCost
+}
+    console.log(calculateTip( .20, 20));
+    console.log(calculateTip( .25, 25.50));
+    console.log(calculateTip( .15, 33.42));
 // /**
 //  * TODO:
 //  * Use prompt and alert in combination with your calculateTip function to
@@ -101,24 +101,12 @@ console.log(isTwo(1))
 //     [X] prompt user for percentage
 //     [X] display the dollar amount to tip (function created)
 //  */
-// let totalCost = parseInt(prompt("How much is your $"));
-// let percentage = prompt("What is the percentage?" )
-// alert(calculateTip(percentage , totalCost))
-//
+let userTotalCost = parseInt(prompt("How much is your total bill? $"));
+let percentage = prompt("What is the percentage?" )
+alert(calculateTip(percentage , userTotalCost));
 
 
 
-
-
-// if (total === 20) {
-//     prompt("The bill is $" + total  "plus" theTip);
-
-// } else if (total === 25.50){
-//     prompt("The bill is $" + total  "plus" theTip);
-// } else (total ==== 33.42){
-//     prompt("The bill is $" + total  "plus" theTip);
-//
-//     }
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -126,10 +114,11 @@ console.log(isTwo(1))
  * and 1). It should return the result of applying the discount to the original
  * price.
    TODO:
- * [X] creat function "applyDiscount"
- * [X] "applyDiscount accept price
- * [] and discount %
- *[] return results
+ *  [X] creat function "applyDiscount"
+ *  [X] "applyDiscount" accept price
+ *  [X] and discount %
+ *  [X] return results
+ *
  */
 
 
@@ -137,7 +126,7 @@ console.log(isTwo(1))
     let newDiscountPrice = originalPrice - (originalPrice * discountPercentage);
     return newDiscountPrice.toFixed(2)
 }
-let originalPrice = parseInt(prompt("Please enter price."));
+let originalPrice = parseFloat(prompt("Please enter price."));
 let discountPercentage = parseFloat(prompt("Please enter discount percentage"));
 
 alert("Your new total is $" + applyDiscount (originalPrice,  discountPercentage))
