@@ -43,6 +43,6 @@
 
 //number 5
 
-for (let i = 100; i >= 5; i -= 5) {
-    console.log(i);
-}
+// for (let i = 100; i >= 5; i -= 5) {
+//     console.log(i);
+// }
