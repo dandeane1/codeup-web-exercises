@@ -66,7 +66,8 @@ let random = num
     //         return false;
     //     }
 
-    return num === 2
+    return num === 2;
+
     }
 console.log(isTwo(random))
 console.log(isTwo(1))
@@ -103,7 +104,7 @@ console.log(isTwo(1))
 //  */
 let userTotalCost = parseInt(prompt("How much is your total bill? $"));
 let percentage = prompt("What is the percentage?" )
-alert(calculateTip(percentage , userTotalCost));
+alert("Is the amount you wish to tip $" + calculateTip(percentage , userTotalCost));
 
 
 
