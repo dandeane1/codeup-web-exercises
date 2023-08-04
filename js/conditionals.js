@@ -62,39 +62,42 @@ console.log(analyzeColor("white"));
      * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
      * You should see a different message every time you refresh the page
      */
-    switch (colors.toLocaleLowerCase()) {
-        case "red":
-           return "The ball is red.";
+
+    function analyzeColor(color) {
+        let result;
+        switch (color) {
+            case "red":
+                return "The ball is red.";
 
 
-        case "orange":
-            return "Orange is a fruit.";
+            case "orange":
+                return "Orange is a fruit.";
 
 
-        case "yellow":
-            return "The sun is yellow.";
+            case "yellow":
+                return "The sun is yellow.";
 
 
-        case "green":
-            return "The grass is green.";
+            case "green":
+                return "The grass is green.";
 
 
-        case "blue":
-            return "The sky is blue.";
+            case "blue":
+                return "The sky is blue.";
 
 
-        case "indigo":
-            return "Indigo is blue.";
+            case "indigo":
+                return "Indigo is blue.";
 
 
-        case "violet":
-            return "Violet is purple.";
-        default:
-            return (color + " unknown");
+            case "violet":
+                return "Violet is purple.";
+            default:
+                return (color + " unknown");
 
-    } alert ("I don't know anything about that color.");
-}
-
+                alert("I don't know anything about that color.");
+        }
+    }
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
