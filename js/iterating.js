@@ -6,7 +6,7 @@
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
-// let nameOf = [ "Phillip", "Joe", "Steve" , "Jack"];
+let nameOf = [ "Phillip", "Joe", "Steve" , "Jack"];
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
@@ -53,7 +53,14 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    numbersOF.forEach(i)= [1, 2, 3, 4, 5]
 
-    let
+function first()
+        {
+            console.log(nameOf[0])
+        }
+        first(nameOf);
+
+
+
+
 })();
