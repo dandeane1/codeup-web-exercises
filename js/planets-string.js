@@ -13,7 +13,9 @@
      */
     let planetsArray =  planetsString.split("|")
     console.log(planetsArray);
-    let brPlanetsString ="<br>Mercury</br><br>Venus</br><br>Earth</br><br>Mars<br>Jupiter</br><br>Saturn</br><br>Uranus<br>Neptune</br>;
+
+let planetsHTML = planetsArray . join('<br');
+console.log(planetsHTML)
     /**
      * TODO:
      * Create a string with <br> tags between each planet. console.log() your
@@ -24,19 +26,13 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
+for (let i= 0; i < planetsArray.length; i++){
+    planetsHTML +=
+        '<li>${planetsArray[i]}</li>';
+    planetsHTML += "</ul>";
+    console.log(planetsHTML)
 
-    ul
-    <li>Mercury</li>
-    <li>Mercury</li>
-    <li>Venus</li>
-    <li>Earth</li>
-    <li>Mars</li>
-    <li>Jupiter</li>
-    <li>Saturn</li>
-    <li>Uranus</li>
-    <li>Neptune</li>
-    <li>Pluto</li>
-    </ul>
+}
 
 })();
 
