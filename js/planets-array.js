@@ -1,3 +1,4 @@
+(function(){
 
     "use strict";
 
@@ -39,3 +40,4 @@
 
     console.log(planets.sort());
     console.log(planets);
+})();
