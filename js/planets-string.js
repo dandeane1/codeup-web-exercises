@@ -2,8 +2,8 @@
 (function(){
     "use strict";
 
-    var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-    var planetsArray = planetsString.split("|")
+    let  planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
+
 
     /**
      * TODO:
@@ -11,9 +11,9 @@
      * planetsArray.
      * console.log planetsArray to check your work
      */
-
+    let planetsArray =  planetsString.split("|")
     console.log(planetsArray);
-
+    let brPlanetsString ="<br>Mercury</br><br>Venus</br><br>Earth</br><br>Mars<br>Jupiter</br><br>Saturn</br><br>Uranus<br>Neptune</br>;
     /**
      * TODO:
      * Create a string with <br> tags between each planet. console.log() your
@@ -24,7 +24,7 @@
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-<h1> Planets</h1>
+
     ul
     <li>Mercury</li>
     <li>Mercury</li>

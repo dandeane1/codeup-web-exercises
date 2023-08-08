@@ -1,8 +1,8 @@
-(function(){
+
 
     "use strict";
 
-    var planets = [
+    let planets = [
         'Mercury',
         'Venus',
         'Earth',
@@ -19,25 +19,24 @@
      * the step that it describes
      */
 
-    console.log(planets.unshift("Sun"));
+    planets.unshift("Sun");
     console.log(planets);
 
-    console.log(planets.push("Pluto"));
+    planets.push("Pluto");
     console.log(planets);
 
-    console.log(planets.shift("Sun"));
+    planets.shift("Sun");
     console.log(planets);
 
-    console.log(planets.pop("Pluto"));
+    planets.pop("Pluto");
     console.log(planets);
 
-    var index = planets.indexOf('Earth');
+    let index = planets.indexOf('Earth');
 
     console.log(index);
 
-    console.log(planets.reverse());
+    planets.reverse();
     console.log(planets);
 
-    console.log(planets.sort());
+    planets.sort();
     console.log(planets);
-})();
