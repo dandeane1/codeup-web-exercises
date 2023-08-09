@@ -49,6 +49,17 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+// function tp called in forEach so function ingoiong to work with elements of that array
+
+        // function (element){
+        // My array has three objects elements : name prop & amount
+        //return ${element.name} is shopping with us
+        //purchased ${elment.name}
+     // if qualiied discount offer %{element.name}
+     // has to pay ${element.amount-(elment.amount * .12).tofixed(2){
+     // else
+     // return ${element.name} is here to purchased ${element.amount
+     // does noy qualify for discount}
 
     let shoppers = [
         {name: 'Cameron', amount: 180},
@@ -82,7 +93,7 @@ let books =
     [{title: "The Salmon of Doubt", author: {firstName: "Douglas", lastName:"Adams" }},
         {title: "Walkaway", author: {firstName: "Cory", lastName:"Doctorow" }},
         {title: "A Brief History of Time", author: {firstName: "Stephen", lastName:"Hawking" }},
-        {title: "The Poet", author: {firstName: "Michael", lastName:"Connely" }},
+        {title: "The Poet", author: {firstName: "Michael", lastName:"Connelly" }},
         {title: "Art of War", author: {firstName: "Sun", lastName:"Tzo" }},
         {title: "The 7 Habits of High Effective People ", author: {firstName: "Stephen", lastName:"Covay" }},
         {title: "The Interpretation of Dreams", author:  {firstName:"Sigmund", lastName: "Freud"}},
@@ -96,6 +107,7 @@ let books =
         console.log(`Book # ${index + 1}`);
         console.log(`Title: ${book.title}`);
         console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+        console.log( '---' );
     });
 
      /**
@@ -106,6 +118,26 @@ let books =
      * - the book title
      * - author's full name (first name + last name)
      * Example Console Output:
+      /**  TODO:
+      [] create function "createBook()
+      accepts title and author name
+      [] returns book object
+
+      [] refactor code to use array instead of function
+
+      [] create function "showBookInfo"
+      accepts book object
+      [] returns outputs from above
+
+      [] refactor loop to use "showBookInfo"
+      */
+     function createBook(title, authorName){
+
+     }
+
+    function showBookInfo(){
+
+    }
 
      /**     Book # 1
      *      Title: The Salmon of Doubt
@@ -135,4 +167,8 @@ let books =
 
 
 
-})();
+
+
+
+
+ })();
