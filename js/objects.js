@@ -131,8 +131,8 @@ let books =
 
       [] refactor loop to use "showBookInfo"
       */
-     function createBook(title, authorName){
-
+     function createBook(bookTitle, authorFirstName, authorLastName){
+         return {title:bookTitle, author:{firstName:authorFirstName,lastName:authorLastName}};
      }
 
     function showBookInfo(){
