@@ -135,7 +135,10 @@ and needs to pay $${finalAmount.toFixed(2)}.`);
         return {title: bookTitle, author: {firstName: authorFirstName, lastName: authorLastName}};
     }
 
-function createBook();
+function showBookInfo(){
+
+}
+
 
 
      /**     Book # 1
