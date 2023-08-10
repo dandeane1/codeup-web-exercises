@@ -55,17 +55,17 @@
         // My array has three objects elements : name prop & amount
         //return ${element.name} is shopping with us
         //purchased ${elment.name}
-     // if qualiied discount offer %{element.name}
-     // has to pay ${element.amount-(elment.amount * .12).tofixed(2){
-     // else
-     // return ${element.name} is here to purchased ${element.amount
-     // does noy qualify for discount}
+        // if qualiied discount offer %{element.name}
+        // has to pay ${element.amount-(elment.amount * .12).tofixed(2){
+        // else
+        // return ${element.name} is here to purchased ${element.amount
+        // does noy qualify for discount}
 
     let shoppers = [
-        {name: 'Cameron', amount: 180},
-        {name: 'Ryan', amount: 250},
-        {name: 'George', amount: 320}
-    ];
+            {name: 'Cameron', amount: 180},
+            {name: 'Ryan', amount: 250},
+            {name: 'George', amount: 320}
+        ];
     shoppers.forEach(function (shopper) {
         let discount = 0;
         if (shopper.amount > 200) {
@@ -73,9 +73,9 @@
         }
         let finalAmount = shopper.amount - discount;
 
-    console.log(`${shopper.name} bought $${shopper.amount.toFixed(2)}, got a discount of $${discount.toFixed(2)},
+        console.log(`${shopper.name} bought $${shopper.amount.toFixed(2)}, got a discount of $${discount.toFixed(2)},
 and needs to pay $${finalAmount.toFixed(2)}.`);
-})
+    })
     // }
     // /** TODO:
     //  * Create an array of objects that represent books and store it in a
@@ -89,28 +89,28 @@ and needs to pay $${finalAmount.toFixed(2)}.`);
     //  * > console.log(books[0].author.firstName) // "Douglas"
     //  * > console.log(books[0].author.lastName) // "Adams"
     //  */
-let books =
-    [{title: "The Salmon of Doubt", author: {firstName: "Douglas", lastName:"Adams" }},
-        {title: "Walkaway", author: {firstName: "Cory", lastName:"Doctorow" }},
-        {title: "A Brief History of Time", author: {firstName: "Stephen", lastName:"Hawking" }},
-        {title: "The Poet", author: {firstName: "Michael", lastName:"Connelly" }},
-        {title: "Art of War", author: {firstName: "Sun", lastName:"Tzo" }},
-        {title: "The 7 Habits of High Effective People ", author: {firstName: "Stephen", lastName:"Covay" }},
-        {title: "The Interpretation of Dreams", author:  {firstName:"Sigmund", lastName: "Freud"}},
-        {title: "Memories, Dreams, Reflections", author: {firstName: "Carl", lastName:"Jung" }},] ;
+    let books =
+        [{title: "The Salmon of Doubt", author: {firstName: "Douglas", lastName: "Adams"}},
+            {title: "Walkaway", author: {firstName: "Cory", lastName: "Doctorow"}},
+            {title: "A Brief History of Time", author: {firstName: "Stephen", lastName: "Hawking"}},
+            {title: "The Poet", author: {firstName: "Michael", lastName: "Connelly"}},
+            {title: "Art of War", author: {firstName: "Sun", lastName: "Tzo"}},
+            {title: "The 7 Habits of High Effective People ", author: {firstName: "Stephen", lastName: "Covay"}},
+            {title: "The Interpretation of Dreams", author: {firstName: "Sigmund", lastName: "Freud"}},
+            {title: "Memories, Dreams, Reflections", author: {firstName: "Carl", lastName: "Jung"}},];
 
-   console.log(books[0].title) // "The Salmon of Doubt"
-     console.log(books[0].author.firstName) // "Douglas"
-       console.log(books[0].author.lastName) // "Adams"
+    console.log(books[0].title) // "The Salmon of Doubt"
+    console.log(books[0].author.firstName) // "Douglas"
+    console.log(books[0].author.lastName) // "Adams"
 
-    books.forEach(function(book, index){
+    books.forEach(function (book, index) {
         console.log(`Book # ${index + 1}`);
         console.log(`Title: ${book.title}`);
         console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
-        console.log( '---' );
+        console.log('---');
     });
 
-     /**
+    /**
      * TODO:
      * Loop through the books array and output the following information about
      * each book:
@@ -118,26 +118,25 @@ let books =
      * - the book title
      * - author's full name (first name + last name)
      * Example Console Output:
-      /**  TODO:
-      [] create function "createBook()
-      accepts title and author name
-      [] returns book object
+     /**  TODO:
+     [] create function "createBook()
+     accepts title and author name
+     [] returns book object
 
-      [] refactor code to use array instead of function
+     [] refactor code to use array instead of function
 
-      [] create function "showBookInfo"
-      accepts book object
-      [] returns outputs from above
+     [] create function "showBookInfo"
+     accepts book object
+     [] returns outputs from above
 
-      [] refactor loop to use "showBookInfo"
-      */
-     function createBook(bookTitle, authorFirstName, authorLastName){
-         return {title:bookTitle, author:{firstName:authorFirstName,lastName:authorLastName}};
-     }
-
-    function showBookInfo(){
-
+     [] refactor loop to use "showBookInfo"
+     */
+    function createBook(bookTitle, authorFirstName, authorLastName) {
+        return {title: bookTitle, author: {firstName: authorFirstName, lastName: authorLastName}};
     }
+
+function createBook();
+
 
      /**     Book # 1
      *      Title: The Salmon of Doubt
