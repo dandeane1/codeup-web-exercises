@@ -54,23 +54,18 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-
     let testNums = [1, 2, 3, 4, 5]
 
     function first(array) {
         return array[0];
     }
-
     function second(array) {
         return array[1];
     }
-
     function last(array) {
-
         return array[array.length - 1];
-
     }
-console.log(first(testNums));
+  console.log(first(testNums));
     console.log(second(testNums));
     console.log(last(testNums));
 

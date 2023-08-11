@@ -22,24 +22,25 @@
 // }
 
 let userNum;
-do{
-userNum=prompt("Please enter number 1-50")
-if (isEven)()){
-    alert("That is not an odd number")
+do {
+    userNum = prompt("Please enter number 1-50")
+    if (isEven()) {
+        alert("That is not an odd number")
         continue
     }
-if (userNum < 1 || userNum > 49){
-    alert("That number is out side of range")
-    continue;
-break;
+    if (userNum < 1 || userNum > 49) {
+        alert("That number is out side of range")
+        continue;
+        break;
 
-}while(true);
-console.log(userNum):
-    for (let i =0; i< 50: i++);{
-        if (isEven(i)){
+    }
+    while (true) ;
+    console.log(userNum);
+    for (let i = 0; i < 50; i++) {
+        if (isEven(i)) {
             continue;
         }
-    if(userNum === i){
-    console.log("here is a wild number"){;
+        if (userNum === i) {
+            console.log("here is a wild number");
+        }
     }
-}
