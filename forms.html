@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+  </head>
+<body>
+<h4>Please fill out the information requested below.</h4>
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+    <label for="username">Email</label>
+    <input id="username" name="username" type="text" placeholder="Enter your email address" >
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" placeholder="Please enter your password">
+    <br>
+
+    <br>
+    <p>Bio, please tell us about yourself?</p>
+    <textarea name="Bio"></textarea>
+    <br>
+    <br>
+    <fieldset>
+    <legend>How did you hear about us?</legend>
+
+    A <input id=awareness1 type="radio" name="quiz_question_1" value="a">Billboard <br>
+        <label for="awareness1"></label>
+    B <input id=awareness2 type="radio" name="quiz_question_1" value="a">Internet<br>
+        <label for="awareness2"></label>
+    C <input id=awareness3 type="radio" name="quiz_question_1" value="a">Radio<br>
+        <label for="awareness3"></label>
+    D <input id=awareness4 type="radio" name="quiz_question_1" value="a">Other<br>
+        <label for="awareness4"></label>
+    </fieldset>
+    <br>
+
+
+    <label for="web browser"> Which web browser are you using? </label>
+        <select name="web browser" id="web browser">
+            <option value="chrome">Google Chrome</option>
+            <option value="safari">Apple Safari</option>
+            <option value="edge">Microsoft Edge</option>
+            <option value="opera">Opera</option>
+        </select>
+    <br>
+    <br>
+
+
+    <input type="submit">
+    <input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
+
+
+    <br>
+
+</form>
+
+</body>
+</html>
