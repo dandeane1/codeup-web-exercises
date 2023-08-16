@@ -47,7 +47,7 @@ main h3 {
        }
    /*TODO: Target the direct descendents of the aside element's unordered list element's list items and change their color from the above example*/
 *aside>ul>li {
-color: aqua;
+color: #064646;
 }
 /* T This should not change the color of the header ul's children li elements */
 
@@ -83,9 +83,9 @@ h1.fancy-header {
         /* Watch me set a background image to my paragraph with an ID of mainParagraph*/
 
         /* TODO: Use the pexels website and find an image to add to an element on your page: try messing with the background-repeat or background-size properties */
-/*#mainParagraph {*/
-/*    background-image: url(i)*/
-/*}*/
+/#mainParagraph {
+/ background-image: url(i)
+
         /* Watch me teach you about variables */
 
         /* TODO: Try variables out on your own - is there a common color you could make into a CSS variable or create one to experiment with? What about a picture in multiple spots?
