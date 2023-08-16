@@ -88,27 +88,27 @@ and needs to pay $${finalAmount.toFixed(2)}.`);
     //  * > console.log(books[0].title) // "The Salmon of Doubt"
     //  * > console.log(books[0].author.firstName) // "Douglas"
     //  * > console.log(books[0].author.lastName) // "Adams"
-    //  */
-    let books =
-        [{title: "The Salmon of Doubt", author: {firstName: "Douglas", lastName: "Adams"}},
-            {title: "Walkaway", author: {firstName: "Cory", lastName: "Doctorow"}},
-            {title: "A Brief History of Time", author: {firstName: "Stephen", lastName: "Hawking"}},
-            {title: "The Poet", author: {firstName: "Michael", lastName: "Connelly"}},
-            {title: "Art of War", author: {firstName: "Sun", lastName: "Tzo"}},
-            {title: "The 7 Habits of High Effective People ", author: {firstName: "Stephen", lastName: "Covay"}},
-            {title: "The Interpretation of Dreams", author: {firstName: "Sigmund", lastName: "Freud"}},
-            {title: "Memories, Dreams, Reflections", author: {firstName: "Carl", lastName: "Jung"}},];
-
-    console.log(books[0].title) // "The Salmon of Doubt"
-    console.log(books[0].author.firstName) // "Douglas"
-    console.log(books[0].author.lastName) // "Adams"
-
-    books.forEach(function (book, index) {
-        console.log(`Book # ${index + 1}`);
-        console.log(`Title: ${book.title}`);
-        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
-        console.log('---');
-    });
+    //  */ my code without the bonus
+    // let books =
+    //     [{title: "The Salmon of Doubt", author: {firstName: "Douglas", lastName: "Adams"}},
+    //         {title: "Walkaway", author: {firstName: "Cory", lastName: "Doctorow"}},
+    //         {title: "A Brief History of Time", author: {firstName: "Stephen", lastName: "Hawking"}},
+    //         {title: "The Poet", author: {firstName: "Michael", lastName: "Connelly"}},
+    //         {title: "Art of War", author: {firstName: "Sun", lastName: "Tzo"}},
+    //         {title: "The 7 Habits of High Effective People ", author: {firstName: "Stephen", lastName: "Covay"}},
+    //         {title: "The Interpretation of Dreams", author: {firstName: "Sigmund", lastName: "Freud"}},
+    //         {title: "Memories, Dreams, Reflections", author: {firstName: "Carl", lastName: "Jung"}},];
+    //
+    // console.log(books[0].title) // "The Salmon of Doubt"
+    // console.log(books[0].author.firstName) // "Douglas"
+    // console.log(books[0].author.lastName) // "Adams"
+    //
+    // books.forEach(function (book, index) {
+    //     console.log(`Book # ${index + 1}`);
+    //     console.log(`Title: ${book.title}`);
+    //     console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+    //     console.log('---');
+    // });
 
     /**
      * TODO:
@@ -131,33 +131,17 @@ and needs to pay $${finalAmount.toFixed(2)}.`);
 
      [] refactor loop to use "showBookInfo"
      */
-    function createBook(bookTitle, authorFirstName, authorLastName) {
-        return {title: bookTitle, author: {firstName: authorFirstName, lastName: authorLastName}};
-    }
+    // function createBook(bookTitle, authorFirstName, authorLastName) {
+    //     return {title: bookTitle, author: {firstName: authorFirstName, lastName: authorLastName}};
 
-function showBookInfo(){
+    // function showBookInfo(book, index) {
+    //     books.forEach(function (book, index){
+    //         showBookInfo(book.author);
+    //     });
 
-}
 
 
-
-     /**     Book # 1
-     *      Title: The Salmon of Doubt
-     *      Author: Douglas Adams
-     *      ---
-     *      Book # 2
-     *      Title: Walkaway
-     *      Author: Cory Doctorow
-     *      ---
-     *      Book # 3
-     *      Title: A Brief History of Time
-     *      Author: Stephen Hawking
-     *      ---
-     *      ...
-     */
-
-    /**
-     * Bonus:
+    /* Bonus:
      * - Create a function named `createBook` that accepts a title and author
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
@@ -166,11 +150,97 @@ function showBookInfo(){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    // class answer with bonus
+    let book1 = {
+        title: "Fahrenheit 451",
+        author:{
+            firstName: "Ray",
+            lastName: "Bradbury"
+        }
+    }
+
+    let book2 = {
+        title: "Cat's Cradle",
+        author: {
+            firstName: "Kurt",
+            lastName: "Vonnegut"
+        }
+
+    }
+    let book3 = {
+        title: "Nine Stories",
+        author: {
+            firstName: "J.D.",
+            lastName: "Salinger"
+        }
+
+    }
+    let book4 = {
+        title: "Foundation",
+        author: {
+            firstName: "Isaac",
+            lastName: "Asimov"
+        }
+
+    }
+    let book5 = {
+        title: "Test Driven Development by Example",
+        author: {
+            firstName: "Kent",
+            lastName: "Beck"
+        }
+
+    }
+
+    let books = [book1, book2, book3, book4, book5];
+
+
+    console.log(books[0].title);
+    console.log(books[0].author.firstName + " " + books[0].author.lastName);
+
+    console.log(books[3].title);
+    console.log(books[3].author.firstName + " " + books[3].author.lastName);
 
 
 
+    for (let i = 0; i < books.length; i++) {
+        console.log(`Books # ${i + 1}`);
+        console.log(`Title: ${books[i].title}`);
+        console.log(`Author: ${books[i].author.firstName} ${books[i].author.lastName}`);
+    }
+
+    function createBook(bookTitle, authorFirstName, authorLastName){
+
+        let bookObject = {};
+        bookObject.title = bookTitle;
+        bookObject.author = {
+            firstName: authorFirstName,
+            lastName: authorLastName
+        };
+
+        return bookObject;
+    }
+
+    let booksArray = [];
+
+    booksArray.push(createBook("Title1", "Dude", "McDude"));
+    booksArray.push(createBook("Title2", "Dude", "McDude"));
+    booksArray.push(createBook("Title3", "Dude", "McDude"));
+    booksArray.push(createBook("Title4", "Dude", "McDude"));
+    booksArray.push(createBook("Title5", "Dude", "McDude"));
+
+    function showBookInfo(array){
+
+        for (let i = 0; i < array.length; i++) {
+            console.log(`Books # ${i + 1}`);
+            console.log(`Title: ${array[i].title}`);
+            console.log(`Author: ${array[i].author.firstName} ${array[i].author.lastName}`);
+        }
+    }
+
+    showBookInfo(booksArray);
+
+    })();
 
 
 
-
- })();
