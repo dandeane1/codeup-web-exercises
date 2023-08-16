@@ -1,4 +1,10 @@
 h1.fancy-header {
     color: #671467;
+    text-align: center;
     text-decoration: underline;
 }
+h2 { color: rgba(8, 37, 224, 0.93);
+    text-decoration: underline
+}
+ol { list-style: upper-roman; }
+ul { list-style: square; }

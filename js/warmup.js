@@ -6,10 +6,11 @@
 // I. Refactor your message to use template strings.
 // Ii. Add validation to make sure the argument passed to the function is a string datatype only.
 
-function logUser(string){
-    return (string) + "has logged in for the day.";
 
+function logUser(stringArgument) {
+    if (typeof stringArgument !== "string") {
+        return "Argument must be a string data type.";
     }
-console.log(logUser + "has logged in for the day.")
-// “ken2cool has logged in for the day.”
-    (logUser(ken))
+    return `${stringArgument} has logged in for the day.`;
+}
+console.log(logUser("ken2cool"));
