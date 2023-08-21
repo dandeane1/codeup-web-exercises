@@ -9,3 +9,21 @@ img {
     height: auto;
     box-sizing: border-box;
 }
+
+body{font-family: Raleway,sans-serif;
+    color: #07043B;
+
+}
+
+a {
+    color:inherit;
+    text-decoration: unset;
+}
+
+ul{
+    list-style: none;
+
+}
+.label{
+    display: block;
+}

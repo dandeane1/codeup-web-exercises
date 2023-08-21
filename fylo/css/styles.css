@@ -1,0 +1,27 @@
+/* All your custom styles for this site go here */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --clr-black: #000000;
+    --clr-dblue: #07043B;
+    --clr-green: #3DA08F;
+    --clr-lblue: #6C9BFF;
+    --clr-lred: #EF4877;
+    --clr-lgrey: #DFE4F0;
+    --clr-lpurple: #575988;
+    --clr-llpurple: #BDBAFA;
+    --clr-dwhite: #F8F8FE;
+    --clr-white: #FFFFFF;
+}
+
+    )
+.row{
+    max-width: 1280px;
+}
+
+}
+.container.hero{
+    min-height: 60vh;
+}
+button{
+   background-color: var(--clr-lblue);
+}
