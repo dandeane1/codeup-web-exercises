@@ -28,29 +28,47 @@
 /*    border-radius: 10px;*/
 /*    text-align: center;*/
 /*}*/
-.light-title-bar {
-    background-color: rgba(255, 255, 255, 0.8);
+
+.navbar-sign-up {
+    text-decoration: none;
+    color: black;
+}
+
+/*.light-title-bar {*/
+/*    background-color: rgba(255, 255, 255, 0.8);*/
 }
 
 .jumbotron {
-    position: relative;
+    background-size: cover;
     height: 346px;
     overflow: hidden;
+    background-image: url(“../img/pizza.png”);
+}
+h1 {
+    text-align: center;
 }
 
-.jumbotron img.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: -1;
+.main h2 {
+    font-size: 30px;
+    font-weight: 600;
 }
 
-.btn {
-    background-color: blue;
-    color: white;
+.cart-icon {
+    filter:invert(1);
 }
-.table-header {
-    background-color: lightgrey;
-}
+/*.jumbotron img.background-image {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    z-index: -1;*/
+/*}*/
+
+/*.btn {*/
+/*    background-color: blue;*/
+/*    color: white;*/
+/*}*/
+/*.table-header {*/
+/*    background-color: lightgrey;*/
+/*}*/
