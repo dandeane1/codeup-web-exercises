@@ -36,13 +36,13 @@
 
 /*.light-title-bar {*/
 /*    background-color: rgba(255, 255, 255, 0.8);*/
-}
+
 
 .jumbotron {
     background-size: cover;
     height: 346px;
     overflow: hidden;
-    background-image: url(“../img/pizza.png”);
+    background-image: url(../img/pizza.png);
 }
 h1 {
     text-align: center;

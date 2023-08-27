@@ -25,7 +25,7 @@
           <a class="nav-link active" aria-current="page" href="#">Order Online</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Menu</a>
+          <a class="nav-link active" href="#">Menu</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -47,8 +47,7 @@
       <a class="navbar-sign-up" href="#"><img src="img/person-fill.svg"> Sign Up!</a>
     </div>
   </div>
-</div>
-
+</nav>
 
 <!--<div class="container-fluid">-->
 <!--  <img src="img/pizza.png" height="346" width="1323" alt="pizza"/>-->
@@ -57,10 +56,11 @@
 <!--  &lt;!&ndash; ... Your navbar code ... &ndash;&gt;-->
 <!--</nav>-->
 <div class="container">
-<div class="jumbotron d-flex justify-content-center align-items-center ">
+    <div class="card-body d-flex flex-column">
+<div class="jumbotron d-flex justify-content-center align-items-center">
     <div class="bg-light w-100" style="--bs-bg-opacity: .5;">
     <h1>Welcome to Pizza World!</h1>
-
+    </div>
   </div>
 </div>
 <div class="container pt-5">
@@ -113,9 +113,9 @@
                 </li>
             </ul>
           </div>
-        </div>
 
-          <div class="card-m3" >
+
+          <div class="card-mt-3" >
               <div class="card-header">
                 Crispy Thin
               </div>
@@ -142,7 +142,7 @@
 
 <!--        <div class="d-grid gap-2 d-md-flex justify-content-md-end">-->
           <div class="align-self-end position-relative ">
-          <button class="btn btn-primary mt-3" type="button">Next Step</button>
+              <a href="#" class="btn btn-primary mt-3">Next Step > </a>
         </div>
       </div>
       </div>
@@ -156,6 +156,7 @@
             <div class="card-header bg-primary text-light">
                  Choose Cheese and sauce
             </div>
+              <div class="card-body d-flex flex-column">
                 <div class="card">
                   <div class="card-header">
                     Cheese
@@ -171,13 +172,12 @@
                           <option value="3">DOUBLE</option>
                         </select>
                     </li>
-
-
                   </ul>
                 </div>
                         <div class="card-mt-3">
                           <div class=" card-header">
-                        < <div class="list-group-item">Sauce>
+                         Sauce
+                          </div>
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item">What type?</li>
 <!--                          <div class="form-check">-->
@@ -301,11 +301,9 @@
                       </label>
                     </div>
                   </li>
-<!--                      </label>-->
-
                 </ul>
               </div>
-            </div>
+
             <div class="align-self-end position-relative">
               <a href="#" class="btn btn-primary mt-3">Checkout <img src="img/cart-check-fill.svg" alt="cart icon" class="cart-icon text-light"> </a>
 
