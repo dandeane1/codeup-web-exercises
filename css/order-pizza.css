@@ -1,74 +1,25 @@
 
-@import "layout.css";
+/*@import "layout.css";*/
 
 
-/*.jumbotron {*/
-/*    position: relative;*/
-/*    height: 200px;*/
-/*    overflow: hidden;*/
-/*    background-size: cover;*/
-/*    background-position: center center;*/
-/*    background-repeat: no-repeat;*/
-/*}*/
-
-/*.jumbotron img.background-image {*/
-/*    display: block;*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*    opacity: 1.7;*/
-/*}*/
-
-/*.banner {*/
-/*    position: absolute;*/
-/*    top: 50%;*/
-/*    left: 50%;*/
-/*    transform: translate(-50%, -50%);*/
-/*    background-color: rgba(255, 255, 255, 0.8);*/
-/*    padding: 10px 20px;*/
-/*    border-radius: 10px;*/
-/*    text-align: center;*/
-/*}*/
 
 .navbar-sign-up {
     text-decoration: none;
     color: black;
 }
-
-/*.light-title-bar {*/
-/*    background-color: rgba(255, 255, 255, 0.8);*/
-
-
 .jumbotron {
-    background-size: cover;
     height: 346px;
-    overflow: hidden;
+    background-size: cover;
     background-image: url(../img/pizza.png);
 }
 h1 {
     text-align: center;
 }
-
 .main h2 {
     font-size: 30px;
     font-weight: 600;
 }
-
 .cart-icon {
-    filter:invert(1);
-}
-/*.jumbotron img.background-image {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*    z-index: -1;*/
-/*}*/
 
-/*.btn {*/
-/*    background-color: blue;*/
-/*    color: white;*/
-/*}*/
-/*.table-header {*/
-/*    background-color: lightgrey;*/
-/*}*/
+    filter: invert(1);
+}
