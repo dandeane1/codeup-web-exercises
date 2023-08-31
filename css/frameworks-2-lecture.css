@@ -1,0 +1,9 @@
+/*header.container-fluid {*/
+/*    border-bottom: 1px solid black;*/
+/*}*/
+
+.page-wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
