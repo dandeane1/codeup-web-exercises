@@ -10,7 +10,7 @@
     }*/
     /* Watch me add a color property and padding to our footer */
     /* You do:
-    ​
+
     TODO: Add a selector to change the background color of the footer element to black and a text-align property of center*/
 footer{
     text-align: center;
@@ -29,9 +29,9 @@ footer{
 }/*
 /
             TODO: Select the class of highlight and add a background-color of yellow.
-        ​
+
             Observe the li on 55 with both classes as opposed to the li on 56 with only one class.
-        ​
+
          */
 
         /* Watch me target all h3s under the main */
@@ -89,7 +89,7 @@ h1.fancy-header {
         /* Watch me teach you about variables */
 
         /* TODO: Try variables out on your own - is there a common color you could make into a CSS variable or create one to experiment with? What about a picture in multiple spots?
-        ​
+
         Remember D ~ R ~ Y ; CSS variables help you achieve that!
          */
 

@@ -89,26 +89,26 @@ and needs to pay $${finalAmount.toFixed(2)}.`);
     //  * > console.log(books[0].author.firstName) // "Douglas"
     //  * > console.log(books[0].author.lastName) // "Adams"
     //  */ my code without the bonus
-    // let books =
-    //     [{title: "The Salmon of Doubt", author: {firstName: "Douglas", lastName: "Adams"}},
-    //         {title: "Walkaway", author: {firstName: "Cory", lastName: "Doctorow"}},
-    //         {title: "A Brief History of Time", author: {firstName: "Stephen", lastName: "Hawking"}},
-    //         {title: "The Poet", author: {firstName: "Michael", lastName: "Connelly"}},
-    //         {title: "Art of War", author: {firstName: "Sun", lastName: "Tzo"}},
-    //         {title: "The 7 Habits of High Effective People ", author: {firstName: "Stephen", lastName: "Covay"}},
-    //         {title: "The Interpretation of Dreams", author: {firstName: "Sigmund", lastName: "Freud"}},
-    //         {title: "Memories, Dreams, Reflections", author: {firstName: "Carl", lastName: "Jung"}},];
-    //
-    // console.log(books[0].title) // "The Salmon of Doubt"
-    // console.log(books[0].author.firstName) // "Douglas"
-    // console.log(books[0].author.lastName) // "Adams"
-    //
-    // books.forEach(function (book, index) {
-    //     console.log(`Book # ${index + 1}`);
-    //     console.log(`Title: ${book.title}`);
-    //     console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
-    //     console.log('---');
-    // });
+    let books =
+        [{title: "The Salmon of Doubt", author: {firstName: "Douglas", lastName: "Adams"}},
+            {title: "Walkaway", author: {firstName: "Cory", lastName: "Doctorow"}},
+            {title: "A Brief History of Time", author: {firstName: "Stephen", lastName: "Hawking"}},
+            {title: "The Poet", author: {firstName: "Michael", lastName: "Connelly"}},
+            {title: "Art of War", author: {firstName: "Sun", lastName: "Tzo"}},
+            {title: "The 7 Habits of High Effective People ", author: {firstName: "Stephen", lastName: "Covay"}},
+            {title: "The Interpretation of Dreams", author: {firstName: "Sigmund", lastName: "Freud"}},
+            {title: "Memories, Dreams, Reflections", author: {firstName: "Carl", lastName: "Jung"}},];
+
+    console.log(books[0].title) // "The Salmon of Doubt"
+    console.log(books[0].author.firstName) // "Douglas"
+    console.log(books[0].author.lastName) // "Adams"
+
+    books.forEach(function (book, index) {
+        console.log(`Book # ${index + 1}`);
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+        console.log('---');
+    });
 
     /**
      * TODO:
@@ -151,48 +151,48 @@ and needs to pay $${finalAmount.toFixed(2)}.`);
      *   `showBookInfo` function.
      */
     // class answer with bonus
-    let book1 = {
-        title: "Fahrenheit 451",
-        author:{
-            firstName: "Ray",
-            lastName: "Bradbury"
-        }
-    }
+    // let book1 = {
+    //     title: "Fahrenheit 451",
+    //     author:{
+    //         firstName: "Ray",
+    //         lastName: "Bradbury"
+    //     }
+    // }
+    //
+    // let book2 = {
+    //     title: "Cat's Cradle",
+    //     author: {
+    //         firstName: "Kurt",
+    //         lastName: "Vonnegut"
+    //     }
+    //
+    // }
+    // let book3 = {
+    //     title: "Nine Stories",
+    //     author: {
+    //         firstName: "J.D.",
+    //         lastName: "Salinger"
+    //     }
+    //
+    // }
+    // let book4 = {
+    //     title: "Foundation",
+    //     author: {
+    //         firstName: "Isaac",
+    //         lastName: "Asimov"
+    //     }
+    //
+    // }
+    // let book5 = {
+    //     title: "Test Driven Development by Example",
+    //     author: {
+    //         firstName: "Kent",
+    //         lastName: "Beck"
+    //     }
+    //
+    // }
 
-    let book2 = {
-        title: "Cat's Cradle",
-        author: {
-            firstName: "Kurt",
-            lastName: "Vonnegut"
-        }
-
-    }
-    let book3 = {
-        title: "Nine Stories",
-        author: {
-            firstName: "J.D.",
-            lastName: "Salinger"
-        }
-
-    }
-    let book4 = {
-        title: "Foundation",
-        author: {
-            firstName: "Isaac",
-            lastName: "Asimov"
-        }
-
-    }
-    let book5 = {
-        title: "Test Driven Development by Example",
-        author: {
-            firstName: "Kent",
-            lastName: "Beck"
-        }
-
-    }
-
-    let books = [book1, book2, book3, book4, book5];
+    // let books = [book1, book2, book3, book4, book5];
 
 
     console.log(books[0].title);
