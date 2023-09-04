@@ -10,7 +10,7 @@
 <button id="defuser">Defuse the BOM</button>
 
 <script>
-    (function() {
+    (function () {
         "use strict";
 
         let detonationTimer = 5;
@@ -23,15 +23,16 @@
             } else if (detonationTimer < 0) {
                 document.getElementById('timer').innerHTML = detonationTimer;
             }
-            console.log(detonationTimer);
-            detonationTimer --;
+
+            detonationTimer--;
 
         }
-        let intervalid =setInterval(updateTimer,1000);
+
+        let intervalid = setInterval(updateTimer, 1000);
         // TODO: When this function runs, it needs to
         // cancel the interval/timeout for updateTimer()
         function defuseTheBOM() {
-        clearTimeout(intervalid);
+            clearInterval(intervalid);
             // console.log("Bomb defused")
         }
 
