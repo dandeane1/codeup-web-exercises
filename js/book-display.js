@@ -27,11 +27,7 @@ function generateCard(book) {
         </div>`;
 }
 
-// let myCard = `<div class="card">
-//     <div>Book Title: ${title}.</div>
-//     <div>Book Author: ${author}.</div>
-//     <div>Book Genre: ${genre}.</div>
-// </div>`
+
 //TODO: Using JavaScript, add your finished HTML card to the DOM so our users will be able to see it on page load. We want target the innerHTML of #container.
 
 
@@ -41,18 +37,10 @@ let books = [book1,book2,book3];
 //TODO: Refactor your above code - our HTML needs to build three HTML cards with the information from the objects. Hint: We would want to iterate through the array and add each fresh bit of HTML into the variable of allCards set up below.
 
 let allCards = "";
-    books.forEach(book => {
-        let card = generateCard(book);
-        allCards += card;
-    });
+books.forEach(book => {
+    let card = generateCard(book);
+    allCards += card;
+});
 
-// let allCards = "";
-// books.forEach(book => {
-//     book.forEach(book =>{
-//         let card = myCard.replace("{title}",book.title)
-//             .replace("{author}", book.author)
-//             .replace("{genre}",book.gerne);
-//         allCards += card;
-// });
-    let container = document.getElementById("container");
-    container.innerHTML = allCards;
+let container = document.getElementById("container");
+container.innerHTML = allCards
