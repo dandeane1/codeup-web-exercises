@@ -1,83 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Welcome</title>
+    <meta charset="UTF-8">
+    <title>playground</title>
 
-<link rel="stylesheet" href="css/style.css"/>
-    <body>
-        <header>
-            <link rel="stylesheet"href="css/style.css">
-                    <h1  class="fancy-header"Welcome to Veridian Dynamics />
-          <p> At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology</em></strong>. </p>
-        </header>
-        <main>
-    <hr>
-        <h2> Core Values </h2>
+    <!--    Google Fonts import: -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Crimson+Text:ital@0;1&display=swap"
+          rel="stylesheet">
+    <!--    Custom CSS -->
+    <link rel="stylesheet" href="css/selectors-and-properties.css">
+</head>
+<body>
+
+<header>
+    <h1 class="fancy-header serif-font">My Page - Hello World</h1>
+
+    <ul class="header-list">
+        <li class="headerListOne">Header List</li>
+        <li class="headerListOne">Header List</li>
+    </ul>
+    <ol class="header-list">
+        <li class="headerListTwo">Header List</li>
+        <li class="headerListTwo">Header List</li>
+    </ol>
+
+</header>
+
+<main id="container">
+
+    <h2 class="fancy-header border">Main Heading</h2>
+    <p id="mainParagraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A iste mollitia nihil non ratione
+        tenetur vel. Alias asperiores aspernatur, aut eligendi impedit ipsa, nisi, obcaecati perferendis quidem quis
+        sapiente similique!</p>
+
+    <section>
+        <h3 class="fancy-header border">Section Heading</h3>
+        <p class="sectionParagraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Dolor fuga ipsa magnam pariatur!</span>
+            Consequuntur ea fugit, in ipsum labore neque porro repellendus sit sunt voluptatibus! Dicta dolore nam
+            quidem quis.
+        </p>
+        <span>Small Note - end of paragraph</span>
+        <h3 class="fancy-header">Section Heading</h3>
+        <p class="sectionParagraph">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span id="insideParagraph" class="highlight">Dolor fuga ipsa magnam pariatur!</span>
+            Consequuntur ea fugit, in ipsum labore neque porro repellendus sit sunt voluptatibus! Dicta dolore nam
+            quidem quis.
+        </p>
+        <span>Small Note - end of paragraph</span>
+
+        <aside>
+            <h3>Here's some stuff:</h3>
             <ul>
-              <li>Competence</li>
-              <li>Involvement</li>
-              <li>Technology</li>
-             </ul>
-        <h2>Our Process</h2>
+                <li>Unordered thing</li>
+                <li>Unordered thing</li>
+            </ul>
             <ol>
-             <li>Plan</li>
-             <li>Evaluate</li>
-             <li>Implement</li>
+                <li class="no-decoration highlight">List Item</li>
+                <li class="highlight">List Item</li>
             </ol>
-        <h2>2020 Vision</h2>
-        <ul>
-            <li>Become #1 in Technology</li>
-            <li>Increase Success by 20%</li>
-            <li>Increase Business by 30 %</li>
-        </ul>
-        </main>
-    <hr>
-        <figcaption>
-        <h2> Company Vision</h2>
-            <table>
-               <tr>
-                   <td><img src="img/pexels-dante-muñoz-15481205.jpg"alt="view from the top" height="360" width="360"/>
-                   </td>
-                   <td><img src="img/pexels-tatiana-fet-1105766.jpg" alt="black and white city view" height=360" width="360"/>
-                   </td>
-               </tr>
-               <tr>
-                   <td><img src="img/pexels-ian-beckley-2440021.jpg" alt="mountains with trees" height="360" width="360"/>
-                   </td>
-                   <td><img src="img/pexels-pixabay-147411.jpg" height="360" width="360"/>
-                   </td>
-               </tr>
-           </table>
-        </figcaption>
-        <h3><strong>Our Product</strong></h3>
-           <table>
-              <thead>
-              <tr>
-                  <thead>Plan</thead>
-                  <thead>Price</thead>
-                  <thead>Features</thead>
-              </tr>
-              <tr>
-                  <td>Starter </td>
-                  <td> $99  </td>
-                  <td>Base Technology</td>
-              </tr>
-              <tr>
-                  <td>Advanced</td>
-                  <td>$199</td>
-                  <td>Additional Features</td>
-              </tr>
-              <tr>
-                  <td>Premium</td>
-                  <td>$499</td>
-                  <td>Unlimited Support</td>
-              </tr>
-          </table>
-        <footer><p><em>All products come with our quality guarantee™</em>.</p>
+        </aside>
+    </section>
 
-        <nav><a href="#top">Back to top of page</a></nav>
-        </footer>
+
+</main>
+<a href="neverbeenhere.html">Never Been Here</a>
+<a href="https://www.google.com">I've been here</a>
+<footer>
+
+    <span>Footer stuff - copyright; about us; nav area</span>
+</footer>
 </body>
 </html>
