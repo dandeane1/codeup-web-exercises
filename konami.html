@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <title>Konami Code</title>
+
+</head>
+<body>
+<h1>What is the Password?</h1>
+<div id="currentTypingCode"></div>
+<br>
+<div id="currentTypingStr"></div>
+
+<button id="refresh">click here </button>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+
+<script>
+    $(function() {
+        let secretPwKeyCode = "38384040373937396665";
+        let inputStrKeyCode = "";
+
+        let secretPwCharacters = "";
+        let inputStrCharacters = "";
+
+        let secretPwKeyCode1 = "7978";
+        let inputStrKeyCode1 = "";
+
+        let secretPwCharacters1 = "no";
+        let inputStrCharacters1 = "no";
+
+        let secretPwKeyCode2 = "";
+        let inputStrKeyCode2 = "";
+
+        let secretPwCharacters2 = "";
+        let inputStrCharacters2 = "";
+
+        $("body").on("keydown", (e) => {
+            console.log("event object property 'originalEvent':");
+            console.log(e.originalEvent);
+            console.log("keycode: " + e.originalEvent.keyCode);
+            console.log("key: " + e.originalEvent.key);
+
+            inputStrKeyCode += e.originalEvent.keyCode;
+
+            inputStrCharacters += e.originalEvent.key;
+
+            if(inputStrKeyCode === secretPwKeyCode){
+                alert("you have 30 more lives?");
+                inputStrKeyCode = "";
+                inputStrCharacters = "";
+            }
+
+
+            if(inputStrCharacters1 === secretPwCharacters1){
+                // $("body").css("background-color", "blue");
+                // //
+                alert("Why not");
+                secretPwCharacters1 = "";
+                inputStrCharacters1 = "";
+            }
+
+            $("#currentTypingStr").text(inputStrCharacters);
+            $("#currentTypingCode").text(inputStrKeyCode);
+        })
+
+        $("#refresh").on("click", () => {
+            location.reload();
+
+        })
+    });
+
+</script>
+<script src="js/jquery.js"></script>
+</body>
+</html>
