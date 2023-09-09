@@ -26,10 +26,11 @@
         let secretPwCharacters = "";
         let inputStrCharacters = "";
 
-        let secretPwKeyCode1 = "7978";
+        let secretPwKeyCode1 = "7978" +
+            "";
         let inputStrKeyCode1 = "";
 
-        let secretPwCharacters1 = "no";
+        let secretPwCharacters1 = "";
         let inputStrCharacters1 = "no";
 
         let secretPwKeyCode2 = "";
@@ -49,10 +50,16 @@
             inputStrCharacters += e.originalEvent.key;
 
             if(inputStrKeyCode === secretPwKeyCode){
+                $("body").css("background-color", "red",);
+
                 alert("you have 30 more lives?");
+
                 inputStrKeyCode = "";
                 inputStrCharacters = "";
-            }
+            }else {
+                $("body").css("background-color", "blue");
+            }   alert("Try again")
+
 
 
             if(inputStrCharacters1 === secretPwCharacters1){

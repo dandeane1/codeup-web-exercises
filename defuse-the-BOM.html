@@ -10,11 +10,11 @@
 <button id="defuser">Defuse the BOM</button>
 
 <script>
-    (function () {
+    (function() {
         "use strict";
 
         let detonationTimer = 5;
-        // let timerId;
+
         // TODO: This function needs to be called once every second
         function updateTimer() {
             if (detonationTimer == 0) {
@@ -25,15 +25,14 @@
             }
 
             detonationTimer--;
-
         }
 
-        let intervalid = setInterval(updateTimer, 1000);
+        let intervalId = setInterval(updateTimer, 1000);
+
         // TODO: When this function runs, it needs to
         // cancel the interval/timeout for updateTimer()
         function defuseTheBOM() {
-            clearInterval(intervalid);
-            // console.log("Bomb defused")
+            clearInterval(intervalId);
         }
 
         // Don't modify anything below this line!
@@ -43,7 +42,6 @@
         // We will learn about events in the DOM lessons
         let defuser = document.getElementById('defuser');
         defuser.addEventListener('click', defuseTheBOM);
-
     })();
 </script>
 </body>
