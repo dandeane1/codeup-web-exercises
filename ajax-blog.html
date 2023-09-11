@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+</head>
+<style>
+    nav {
+        background-color: #0072bb ;
+        border: 4px solid black;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+
+    dt {
+        font-weight: bold;
+    }
+
+    title {
+        text-decoration: underline;
+    }
+</style>
+<body>
+
+<div class="page-wrapper">
+    <header>
+    <nav class="container">
+        <div class="row">
+            <div class="column">
+                <form>
+
+                    <button id="blog">blank</button>
+                    <button id="blog1">blank</button>
+
+                </form>
+            </div>
+
+        </div>
+    </nav>
+    <h1>Blog</h1>
+</header>
+    <div class="container">
+        <div class="row">
+            <div class="column" id="posts">
+                <article>
+                    <h2> Daily blog</h2>
+                    <dl>
+                        <dt>blog date</dt>
+                        <dd> a date</dd>
+                        <dt>Categories</dt>
+                        <dd>stuff</dd>
+                        <dt>Title</dt>
+                        <dd> big words</dd>
+                    </dl>
+
+                </article>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+                  integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+                  crossOrigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function () {
+            "use strict";
+            function displayData() {
+                $.get("./data/blog.json").done(function (data) {
+                    console.log(data);
+                    let myHtml = "";
+                    for (let i = 0; i < data.length; i += 1) {
+                        myHtml += `<article>
+                            <h3>Blog date}</h3>
+                            <dl>
+                            <dt>Date</dt>
+                            <dd>${data[i].date}</dd>
+                              <dt>Categories/dt>
+                              <dd>${data[i].Categories}}</dd>
+                              <dt>Title</dt>
+                              <dd>${data[i].title}</dd>
+                            </dl>
+                          </article>`
+                    }
+                    $("#blog").html(myHtml);
+                }).fail((jqXhr, status, error) => {
+                    console.log(error);
+                    console.log("something went wrong");
+                });
+            }
+        })
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
