@@ -16,10 +16,16 @@
 </head>
 <body>
 
-<h1>My First Mapbox Map!</h1>
+<h1>My Three Favorite Restaurants  </h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
+<!-- btn -->
+    <div>
+        <button id="rustic">The Rustic</button>
+        <button id="mexican">El Chaparral Mexican Restaurant</button>
+        <button id="southerleigh">Southerleigh Fine Food And Brewery</button>
+</div>
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
@@ -34,45 +40,72 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 10,
-        // center: [-98.4916, 29.4252]
+        center: [-98.606399, 29.534280]
     });
-
-    // the  geocode method from mapbox-geocoder-utils.js
-    // geocode("42223", MAPBOX_API_TOKEN).then(function(result) {
-    //     console.log(result);
-    //     map.setCenter(result);
-    //     map.setZoom(11);
-    // });
-
-    // reverse geocode method from mapbox-geocoder-utils.js
-    reverseGeocode({lng: -98.4861, lat: 29.4260}, Mapbox_API_Token).then(function(results) {
-        // logs the address for The Alamo
-        console.log(results);
-        geocode(results, Mapbox_API_Token).then(function(result) {
-            console.log(result);
-            map.setCenter(result);
-            map.setZoom(10);
+    document.getElementById('rustic').addEventListener('click', () => {
+        map.flyTo({
+            center:[-98.59857, 29.6095],
+            zoom:20,
+            essential: true,
         });
     });
-
-    let eiffelTowerInfo = {
-        address: "Eiffel Tower, France",
-        popupHTML: "<p>Bonjour!</p>"
-    }
-    function placeMarkerAndPopup(info, token, map) {
-        geocode(info.address, token).then(function(coordinates) {
-            let popup = new mapboxgl.Popup()
-                .setHTML(info.popupHTML);
-            let marker = new mapboxgl.Marker()
-                .setLngLat(coordinates)
-                .addTo(map)
-                .setPopup(popup);
-            popup.addTo(map);
+        document.getElementById('mexican').addEventListener('click', () => {
+            map.flyTo({
+                center: [-98.69445, 29.58344],
+                zoom: 15,
+                essential: true,
+            });
         });
-        console.log(marker)
-    }
+            document.getElementById('southerleigh').addEventListener('click', () => {
+                map.flyTo({
+                    center: [-98.48104, 29.44258],
+                    zoom: 25,
+                    essential: true,
+                    style: 'mapbox://styles/mapbox/streets-v5',
+                });
+            });
+    // let marker = new mapboxgl.Marker().setLngLat([-98.59857, 29.6095]).addTo(map);
+    // let popup = new mapboxgl.Popup().setHTML("<p1>The Rustic  <br> 17619 La Cantera Pkwy UNIT 204, San Antonio, TX 78257</p1></div>");
+    // marker.setPopup(popup);
+    // let marker2 = new mapboxgl.Marker().setLngLat([-98.69445, 29.58344]).addTo(map);
+    // let popup2 = new mapboxgl.Popup().setHTML("<p2>El Chaparral Mexican Restaurant <br> 15103 Bandera Rd, Helotes, TX 78023 </p2>");
+    // marker2.setPopup(popup2);
+    // let marker3 = new mapboxgl.Marker().setLngLat([-98.48104, 29.44258]).addTo(map);
+    // let popup3 = new mapboxgl.Popup().setHTML("<p3>Southerleigh Fine Food And Brewery <br>136 E Grayson St Suite 120, San Antonio, TX 78215 </p3>");
+    // marker3.setPopup(popup3);
+    let restaurant1= {
+     name:"The Rustic",
+     address:"17619 La Cantera Pkwy UNIT 204, San Antonio, TX 78257",    longitude:"-98.59857",
+        latitude:"29.6095",
+     cuisine:"American Cuisine",
+ };
+    let restaurant2= {
+        name:"El Chaparral Mexican Restaurant",
+        address:"15103 Bandera Rd, Helotes, TX 78023 ",
+        longitude:"-98.69445",
+        latitude:"29.58344",
+        cuisine:"Mexican Cuisine",
+    };
+    let restaurant3= {
+        name:"Southerleigh Fine Food And Brewery",
+        address:"136 E Grayson St Suite 120, San Antonio, TX 78215",
+        longitude:"-98.48104",
+        latitude:"29.44258",
+        cuisine:"Texas Cuisine",
+    };
 
-    placeMarkerAndPopup(eiffelTowerInfo, Mapbox_API_Token, map)
+    let restaurants = [restaurant1,restaurant2,restaurant3];
+    let myMarker ="";
+    let myPopup ="";
+    restaurants.forEach(function (restaurants, index,array){
+console.log(restaurants)
+
+       myMarkers = new mapboxgl.Marker().setLngLat([restaurants.longitude, restaurants.latitude]).addTo(map);
+        myPopups = new mapboxgl.Popup().setHTML(restaurants.name + "<br>" + restaurants.address + "<br>" + restaurants.cuisine);
+         myMarkers.setPopup(myPopups);
+
+    });
+
 
 </script>
 </body>

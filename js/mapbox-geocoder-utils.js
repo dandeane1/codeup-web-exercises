@@ -13,6 +13,8 @@
  *  })
  *
  */
+
+
 function geocode(search, token) {
     var baseUrl = 'https://api.mapbox.com';
     var endPoint = '/geocoding/v5/mapbox.places/';
@@ -50,4 +52,5 @@ function reverseGeocode(coordinates, token) {
         .then(function(data) {
             return data.features[0].place_name;
         });
+
 }
