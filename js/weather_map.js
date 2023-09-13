@@ -29,14 +29,15 @@ $.get(BASE_CURRENT_WEATHER_URL + `lat=${29.433053770705534}&lon=${-98.5048271101
     <div>${data.name}</div>
     <div>Current Temp: ${data.main.temp.toFixed(0)}</div>      
     <div>Current Humidity: ${data.main.humidity}</div>
-    <div>Feels Like: ${data.main.feels_like}</div>
+    <div>Feels Like: ${data.main.feels_like.toFixed()}</div>
     <div>Current conditions: ${data.weather[0].description}</div>
     <div>Wind Speed: ${data.wind.speed}</div>
 `
     $("#insert-weather").html(html);
 })
-// for (let i = 0; i < data.length ; i+8) {
-
+for (let i = 0; i < data.length ; i+8) {
+    console.log(html);
+}
 // }
 //Here's a thing called fetch: ** Wow **; modern way to do AJAX!
 
