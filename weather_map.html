@@ -7,23 +7,58 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="css/weather_map.css" >
-
+  <link rel="stylesheet" href="css/layout.css">
 </head>
-<header>
-<div>
-  <nav>
 
-
-
-  </nav>
-</div>
-</header>
 <body>
-<div class = container id="city-name"></div>
-<h1>Local Forecast</h1>
-<div id='map'></div>
-<div id="geocoder" class="geocoder"></div>
-<div id="insert-weather"></div>
+  <div class="container">
+    <div class="column">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <div id="geocoder" class="geocoder">
+
+            </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id='map'>
+
+    </div>
+      <div class=container-fluid id="city-name">
+          <h2>Local Forecast</h2>
+          <div class="container">
+            <div class="card">
+
+
+          <div class="row">
+            <div class="column">
+
+
+              </div>
+            </div>
+
+
+
+          <!--need these-->
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
 <!--part of the search-btn-->
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
