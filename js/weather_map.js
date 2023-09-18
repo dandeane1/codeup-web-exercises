@@ -1,93 +1,200 @@
-"use strict";
-mapboxgl.accessToken = MAPBOX_API_TOKEN;
-let map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 12,
-    center: [-98.4916,  29.4252]
-});
-const geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl
-});
+"use strict"
 
-document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-console.log(geocoder);
-<!--enable location mapbox-->
-function localWeather (lat, lng) {
-    $.get('https://api.openweathermap.org/data/2.5/onecall', {
-        appid: WEATHER_MAP_KEY,
-        lat: lat,
-        lon: lng,
-        units: 'imperial',
-        exclude: 'minutely,hourly',
-    }).done(function localweatherData(data) {
-        console.log(data);
-        let html = "";
-        for (let i = 0; i < data.daily.length - 3; i++) {
-            let weekDay = new Date(data.daily[i].dt * 1000);
-            html += `
-        <ul>
-            <h3>${new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(weekDay)}</h3>
-            <div><img src="https://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@4x.png"/></div>
-            <div style="text">Conditions</div>
-            <li>Temperature High  ${data.daily[i].max}°F</li>
-            <li>Temperature Low  ${data.daily[i].temp.min}°F</li>
-            <li>Description: ${data.daily[i].weather[0].description}</li>
-            <li>Humidity: ${data.daily[i].humidity}</li>
-            <li>Wind: ${data.daily[i].wind_speed.toFixed()}</li>
-        </ul>
-    `;
-        }
-        console.log();
-        $('.card').html(html);
-    }).fail(function (error) {
-        console.log(error);
+// FIVE DAYS weather forecast
+const FIVE_DAY_WEATHER = "https://api.openweathermap.org/data/2.5/forecast?"
+
+let html= ``;
+let  userInput = ``;
+let weatherCondition = ``;
+
+
+let marker = new mapboxgl.Marker({
+    draggable: true
+})
+    .setLngLat([-98.4946, 29.4252])
+    .addTo(map);
+
+$(".company-logo").on("click",()=>{
+    map.flyTo({
+        center: [-98.4946, 29.4252],
+        essential: true,
+        zoom: 13
     });
+    marker.setLngLat([-98.4946, 29.4252])
+});
+
+// img change on card
+function weatherBg(main) {
+
+    if (main.includes("Clouds")) {
+        $("body").css({
+            "background-image": `url("/img/weather-app/clouds.gif")`
+    });
+    } else if (main.includes("Rain")) {
+        $("body").css({
+            "background-image": `url("/img/weather-app/rain.gif")`
+        });
+    } else if (main.includes("Clear")) {
+        $("body").css({
+            "background-image": `url("/img/weather-app/clear.gif")`
+    });
+    } else if (main.includes("Thunderstorm")) {
+        $("body").css({
+            "background-image": `url("/img/weather-app/thunderstorm.gif")`
+        });
+    } else if (main.includes("Fog")) {
+        $("body").css({
+            "background-image": `url("/img/weather-app/fog.gif")`
+        });
+    } else if (main.includes("Snow")) {
+            $("body").css({
+                "background-image": `url("/img/weather-app/snow.gif")`
+    });
+    } else {
+        console.log("look 27-54");
+    }
 }
-localWeather(29.50, -98.50);
-<!--end of mapbox-->
-<!--start weather API-->
-// const BASE_CURRENT_WEATHER_URL = `https://api.openweathermap.org/data/3.0/onecall?`
 
-// const BASE_CURRENT_WEATHER_URL = `https://api.openweathermap.org/data/2.5/onecall?`
+// card data
+const buildForecastCard = (data, i) => {
 
-// $.get(BASE_CURRENT_WEATHER_URL + `lat=${29.433053770705534}&lon=${-98.50482711015165}&appid=${WEATHER_MAP_KEY}&units=imperial`).done((data) => {
-//     console.log(BASE_CURRENT_WEATHER_URL + `lat=${29.433053770705534}&lon=${-98.50482711015165}&appid=${WEATHER_MAP_KEY}`);
+    let html = `
+        
+        <div class="card-wrapper">
+                <div class="card mb-3 position-relative" style="width: 14rem;">
+                  <div class="card-header">${epochConverter(data.list[i].dt)}</div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">${data.city.name}</h5>
+                        <p class="card-text">${data.list[i].weather[0].description}</p>
+                        <div class="d-flex align-items-center justify-content-center">
+                        <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png"/>
+                        </div>
+                        <p class="card-text">Temp: ${data.list[i].main.temp.toFixed()} F&deg</p>
+                        <p class="card-text">Feels like: ${data.list[i].main.feels_like.toFixed()} F&deg</p>
+                       
+                        <p class="card-text">Humidity: ${data.list[i].main.humidity}%</p>
+                        <p class="card-text">Wind Speed: ${data.list[i].wind.speed.toFixed()}</p>
+                    </div>
+                </div>
+        </div>`;
+    return html;
 
-// $.get(BASE_CURRENT_WEATHER_URL + `q=Nashville,TN,USA&appid=${WEATHER_MAP_KEY}&units=imperial`).done((data) => console.log(data))
+}
+console.log(html);
+// date conversion
+const epochConverter = (epoch)=>{
+    return  new Date(epoch * 1000).toString().substring(4, 15)
+}
 
-// $.get(BASE_CURRENT_WEATHER_URL + `q=Anaheim,CA,USA&appid=${WEATHER_MAP_KEY}&units=imperial`).done((data) => {
-//     // // current temp:
-//     console.log(data.main.temp.toFixed(0));
-//     // // humidity:
-//     console.log(data.main.humidity);
-//     // // city search result name:
-//     console.log(data.name);
-//     // // Description of weather [e.g., 'overcast']
-//     console.log(data.weather[0].description);
-//
-//     let html = `
-//     <div>City Searched: ${data.name}</div>
-//     <div>Current Temp: ${data.main.temp.toFixed(0)}</div>
-//     <div>Current Humidity: ${data.main.humidity}</div>
-//     <div>Current conditions: ${data.weather[0].description}</div>
-// `
-//
-//     $("#insert-weather").html(html);
-// })
-//
-// // }
-// // }
-// //Here's a thing called fetch: ** Wow **; modern way to do AJAX!
-//
-// // fetch(BASE_CURRENT_WEATHER_URL + `lat=${29.51}&lon=${-98.65}&appid=${WEATHER_MAP_KEY}`)
-// //     .then((response) => response.json())
-// //     .then((response) => console.log(response))
-// // $("#insert-weather").html(html);
-// fetch(BASE_CURRENT_WEATHER_URL + `lat=${29.51}&lon=${-98.65}&appid=${WEATHER_MAP_KEY}`)
-// .then((response) => response.json())
-//     .then((response) => {
-//         console.log(response);
-// //         $("#insert-weather").html(response.html());
-//     });
+// convert Kelvin to Fahrenheit
+const kelvinToFahrenheit = (kelvin) => {
+    // Celsius is 273 degrees less than Kelvin
+    const celsius = kelvin - 273;
+    // Calculating Fahrenheit temperature to the nearest integer
+    return Math.floor(celsius * (9/5) + 32);
+}
+
+// UPDATE CARDS to marker location
+const onDragUpdateWeather = () =>{
+    const lngLat = marker.getLngLat();
+    console.log(lngLat);
+
+// this get request is displayed when marker dropped
+    $.get(FIVE_DAY_WEATHER + `lat=${lngLat.lat}&lon=${lngLat.lng}&appid=${WEATHER_MAP_KEY}&units=imperial`).done((data)=> {
+        console.log(data);
+        map.flyTo({
+            center: lngLat,
+            essential: true,
+            zoom: 13
+        });
+
+// loop to create the weather cards and display them on the DOM
+        for (let i = 0; i < data.list.length; i+=8) {
+
+            html += buildForecastCard(data, i);
+
+// put weather cards in the DOM
+            $("#forecast-weather").html(html);
+        }
+// end of for loop
+
+
+//resets html variable
+        html = ``;
+
+    });// end of get request
+
+}
+// end of function onDragEnd
+
+// event listener added to marker to run the function onDragUpdateWeather
+marker.on('dragend', onDragUpdateWeather);
+
+
+
+
+$.get(FIVE_DAY_WEATHER + `q=san antonio, usa&appid=${WEATHER_MAP_KEY}&units=imperial`).done((data)=>{
+
+// loop to create the weather cards and display them on the DOM
+    for (let i = 0; i < data.list.length; i+=8) {
+
+
+//var is to capture and assign a bg img(gif) to the card
+        weatherCondition += data.list[i].weather[0].main;
+
+// build weather cards
+        html += buildForecastCard(data, i);
+
+// cards in the DOM
+        $("#forecast-weather").html(html);
+
+        weatherBg(html);
+    }
+// end of for loop
+
+//reset variable
+    html = ``;
+});
+// End of get request
+
+
+// user input event listener and  function to do a get request, UPDATE CARDS & fly to and center map on inputted location
+$("#search-btn").on("click",function(e){
+    e.preventDefault();
+    userInput = $('#search-input').val();
+    geocode(userInput, MAPBOX_API_TOKEN).then(function(result) {
+        console.log(result);
+        map.flyTo({
+            center: result,
+            essential: true,
+            zoom: 13
+    });
+
+// centers the marker in the user input
+        marker.setLngLat(result);
+
+    });
+// end of geocode function
+
+    // get request to update weather cards with user input on search button submitting
+    $.get(FIVE_DAY_WEATHER + `q=${userInput}&appid=${WEATHER_MAP_KEY}&units=imperial`).done((data)=>{
+
+
+//  weather card loop s and display them on the DOM
+        for (let i = 0; i < data.list.length; i+=8) {
+
+            html += buildForecastCard(data, i);
+
+// weather cards in the DOM
+            $("#forecast-weather").html(html);
+        }
+
+// html variable reset
+        html = ``;
+
+    });
+// end of get request
+
+});
+// end of search button event listener
+

@@ -1,81 +1,74 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>w e a t h e r M a p</title>
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
-  <link rel="stylesheet" href="css/weather_map.css" >
-  <link rel="stylesheet" href="css/layout.css">
+    <meta charset="UTF-8">
+    <title>w e a t h e r</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/weather_map.css">
 </head>
-
 <body>
-  <div class="container">
-    <div class="column">
-      <div class="row">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <div id="geocoder" class="geocoder">
 
+<div class="page-wrapper">
+    <!--Map-->
+    <div>
+    <div id='map'></div>
+    </div>
+    <!--TODO-------------------Header----------------------->
+    <div class="container-fluid custom-bg">
+        <div class="row">
+            <div class="d-flex w-100">
+                <nav class="w-100 navbar navbar-expand-lg">
+                    <div class="container-fluid position-relative d-flex">
+                        <h2>Local Weather</h2>
+                        <form class="d-flex" role="search">
+                            <input id="search-input" class="form-control me-2" type="search" placeholder="Search by City" aria-label="Search">
+                            <button id="search-btn" class="btn btn-outline-primary" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
             </div>
-        </nav>
-      </div>
+        </div>
     </div>
-  </div>
-
-  <div class="container">
-    <div id='map'>
-
-    </div>
-      <div class=container-fluid id="city-name">
-          <h2>Local Forecast</h2>
-          <div class="container">
-            <div class="card">
-
-
-          <div class="row">
-            <div class="column">
-
-
-              </div>
+    <!--CARDS -->
+    <div class="container-fluid" id="below-the-map">
+        <div class="row">
+            <div class="col d-flex flex-column gap-2 align-items-sm-center">
+                <!--Display-->
+                <div class="d-flex justify-content-center gap-3 flex-wrap" id="forecast-weather"></div>
             </div>
-
-
-
-          <!--need these-->
-      </div>
+        </div>
     </div>
-  </div>
 
 
+<footer class="footer">
+
+</footer>
+</div>
+</body>
+<!--API Keys Below-->
+<script src="./js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 
 
-
-
-
-
-
-
-
-
-<!--part of the search-btn-->
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+<!--map api-->
+<script>
+    mapboxgl.accessToken = MAPBOX_API_TOKEN
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        // style: 'mapbox://styles/mapbox/satellite-v9',
+        style: 'mapbox://styles/mapbox/satellite-streets-v12',
+        center: [-98.489615, 29.426827], // starting position [lng, lat]
+        zoom: 11, // starting zoom
+        projection: 'globe'
+    });
+</script>
 <!-- jQuery CDN Below-->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-<!--API Keys Below-->
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-
-<!-- Mapbox Geocoder Util Methods -->
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
-<script src="js/mapbox-geocoder-utils.js"></script>
-<script src="js/keys.js"></script>
-
-<!--Custom JS below-->
-<script src="js/weather_map.js">
-
+<!--Bootstrap js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-</body>
+<!--Custom JS below-->
+<script src="js/weather_map.js"></script>
 </html>
