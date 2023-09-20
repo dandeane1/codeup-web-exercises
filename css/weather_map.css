@@ -1,8 +1,8 @@
 :root {
-    --primary-light:rgb(237, 237, 237);
+    --primary-gradient:linear-gradient(180deg, rgba(0,0,0,1) 1%, rgba(91,84,169,1) 15%, rgba(255,255,0,1) 100%);
     --primary-blue: #0072bb;
-    --primary-gradient:linear-gradient(180deg, #5b54a9, yellow );
     --footer-primary: #004225;
+    --search-color: #5ffec7;
 }
 
 #map {
@@ -29,8 +29,6 @@ body {
 
 .container-fluid.custom-bg {
     position: relative;
-    opacity: 81%;
-
     object-fit: contain;
     background: var(--primary-gradient);
     margin-bottom: 5px;
@@ -46,6 +44,7 @@ body {
 
 .card:hover {
     transform: scale(1.25);
+    transition: 1.5s;
 }
 
 .card-body p {
@@ -53,19 +52,19 @@ body {
 }
 
 input#search-input {
-    /*background: unset;*/
     border: 3px solid black;
     border-radius: 15px;
+
 }
 
 input#search-input::placeholder {
-    color: #0072bb;
+    color: var(--primary-blue);
 }
 
 button#search-btn {
     border: 3px solid black;
     border-radius: 15px;
-    color: #00feba;
+    color: var(--search-color);
 }
 
 .footer {

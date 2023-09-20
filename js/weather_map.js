@@ -57,7 +57,7 @@ function weatherBg(main) {
 
 // card data
 const buildForecastCard = (data, i) => {
-
+console.log(data)
     let html = `
         
         <div class="card-wrapper">
@@ -80,7 +80,7 @@ const buildForecastCard = (data, i) => {
     return html;
 
 }
-console.log(html);
+
 // date conversion
 const epochConverter = (epoch)=>{
     return  new Date(epoch * 1000).toString().substring(4, 15)
@@ -172,25 +172,24 @@ $("#search-btn").on("click",function(e){
 
 // centers the marker in the user input
         marker.setLngLat(result);
+        // get request to update weather cards with user input on search button submitting
+        $.get(FIVE_DAY_WEATHER + `lat=${result[1]}&lon=${result[0]}&appid=${WEATHER_MAP_KEY}&units=imperial`).done((data)=>{
+//  weather card loop s and display them on the DOM
+            for (let i = 0; i < data.list.length; i+=8) {
+
+                html += buildForecastCard(data, i);
+                // weather cards in the DOM
+                $("#forecast-weather").html(html);
+
+
+            }
+            // html variable reset
+            html = ``;
 
     });
 // end of geocode function
 
-    // get request to update weather cards with user input on search button submitting
-    $.get(FIVE_DAY_WEATHER + `q=${userInput}&appid=${WEATHER_MAP_KEY}&units=imperial`).done((data)=>{
-
-
-//  weather card loop s and display them on the DOM
-        for (let i = 0; i < data.list.length; i+=8) {
-
-            html += buildForecastCard(data, i);
-
-// weather cards in the DOM
-            $("#forecast-weather").html(html);
-        }
-
-// html variable reset
-        html = ``;
+        $('#search-input').val('');
 
     });
 // end of get request
