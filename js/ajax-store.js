@@ -22,23 +22,25 @@
         console.log(data)
         return data
     }
-    function displayInventory(data){
-        let html = '';
-        for (let i = 0; i < data.length; i++) {
-            html += `<tr>
-                      <td> ${data[i].title} </td>
-                      <td> ${data[i].quantity} </td>
-                      <td> ${data[i].price} </td>
-                      <td> ${data[i].categories} </td>
-                    </tr>`
-        }
-        $("#insertProducts").html(html);
-        return html;
-    }
 
-    let storedata = await updateStore()
-    let displaydata= displayInventory(storedata)
-})()
+//     resouce for code only belongs to ajax-store-js
+// //     function displayInventory(data){
+//         let html = '';
+//         for (let i = 0; i < data.length; i++) {
+//             html += `<tr>
+//                       <td> ${data[i].title} </td>
+//                       <td> ${data[i].quantity} </td>
+//                       <td> ${data[i].price} </td>
+//                       <td> ${data[i].categories} </td>
+//                     </tr>`
+//         }
+//         $("#insertProducts").html(html);
+//         return html;
+//     }
+//
+//     let storedata = await updateStore()
+//     let displaydata= displayInventory(storedata)
+// })()
 
 
 
