@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Defuse the BOM</title>
@@ -13,35 +13,29 @@
     (function() {
         "use strict";
 
-        let detonationTimer = 5;
+         let detonationTimer = 5;
+        let timerInterval;
 
-        // TODO: This function needs to be called once every second
         function updateTimer() {
             if (detonationTimer == 0) {
                 alert('EXTERMINATE!');
+                clearInterval(timerInterval);
                 document.body.innerHTML = '';
-            } else if (detonationTimer < 0) {
+            } else if (detonationTimer > 0) {
                 document.getElementById('timer').innerHTML = detonationTimer;
             }
 
             detonationTimer--;
         }
 
-        let intervalId = setInterval(updateTimer, 1000);
-
-        // TODO: When this function runs, it needs to
-        // cancel the interval/timeout for updateTimer()
         function defuseTheBOM() {
-            clearInterval(intervalId);
+            clearInterval(timerInterval);
         }
 
-        // Don't modify anything below this line!
-        //
-        // This causes the defuseTheBOM() function to be called
-        // when the "defuser" button is clicked.
-        // We will learn about events in the DOM lessons
         let defuser = document.getElementById('defuser');
         defuser.addEventListener('click', defuseTheBOM);
+
+        timerInterval = setInterval(updateTimer, 1000); // call updateTimer every second
     })();
 </script>
 </body>
