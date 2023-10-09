@@ -1,86 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <title>Konami Code</title>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<h1>What is the Password?</h1>
-<div id="currentTypingCode"></div>
-<br>
-<div id="currentTypingStr"></div>
-
-<button id="refresh">click here </button>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-
+<h1>Konami Code</h1>
 
 <script>
-    $(function() {
-        let secretPwKeyCode = "38384040373937396665";
-        let inputStrKeyCode = "";
+    "use strict";
+    let keysEntered = [];
+    let konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]; // Konami Code: Up, Up, Down, Down, Left, Right, Left, Right, B, A, Enter
 
-        let secretPwCharacters = "";
-        let inputStrCharacters = "";
+    let backgroundNoColor = "lightblue";
+    let backgroundYesColor = "red";
 
-        let secretPwKeyCode1 = "7978" +
-            "";
-        let inputStrKeyCode1 = "";
+    let playGame = confirm("Do you want to play a game?");
 
-        let secretPwCharacters1 = "";
-        let inputStrCharacters1 = "no";
+    if (playGame) {
+        document.body.style.backgroundColor = backgroundYesColor;
+        $(document).keyup(function(event){
+            keysEntered.push(event.keyCode);
 
-        let secretPwKeyCode2 = "";
-        let inputStrKeyCode2 = "";
-
-        let secretPwCharacters2 = "";
-        let inputStrCharacters2 = "";
-
-        $("body").on("keydown", (e) => {
-            console.log("event object property 'originalEvent':");
-            console.log(e.originalEvent);
-            console.log("keycode: " + e.originalEvent.keyCode);
-            console.log("key: " + e.originalEvent.key);
-
-            inputStrKeyCode += e.originalEvent.keyCode;
-
-            inputStrCharacters += e.originalEvent.key;
-
-            if(inputStrKeyCode === secretPwKeyCode){
-                $("body").css("background-color", "red",);
-
-                alert("you have 30 more lives?");
-
-                inputStrKeyCode = "";
-                inputStrCharacters = "";
-            }else {
-                $("body").css("background-color", "blue");
-            }   alert("Try again")
-
-
-
-            if(inputStrCharacters1 === secretPwCharacters1){
-                // $("body").css("background-color", "blue");
-                // //
-                alert("Why not");
-                secretPwCharacters1 = "";
-                inputStrCharacters1 = "";
+            if (keysEntered.length > konamiCode.length) {
+                keysEntered.shift();
             }
 
-            $("#currentTypingStr").text(inputStrCharacters);
-            $("#currentTypingCode").text(inputStrKeyCode);
-        })
+            if (arraysEqual(keysEntered, konamiCode)) {
+                alert("You have added 30 lives!");
+                // Add your additional actions here
+                keysEntered = []; // Reset the keysEntered array
+            }
+        });
+    } else {
+        document.body.style.backgroundColor = backgroundNoColor;
+        let reason = prompt("Why don't you want to play a game?");
+        console.log("Reason: " + reason);
+    }
 
-        $("#refresh").on("click", () => {
-            location.reload();
+    function arraysEqual(arr1, arr2) {
+        if (arr1.length !== arr2.length)
+            return false;
 
-        })
-    });
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] !== arr2[i])
+                return false;
+        }
 
+        return true;
+    }
 </script>
-<script src="js/jquery.js"></script>
 </body>
 </html>
