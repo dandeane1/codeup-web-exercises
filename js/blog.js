@@ -8,14 +8,15 @@
     (function(){
 
 
-    //
-    //     let html = "";
-    //     $.ajax("data/blog.json").done(function(data){
-    //         data.forEach(function(blog) {
-    //             html += `<h1>${blog.title}</h1><p>${blog.content}</p><p>${blog.categories}</p><p>${blog.date}</p>`
-    //         });
-    //         $("#posts").html(html);
-    //     });
-    //
-    //
-    // })();
+
+        let html = "";
+        $.ajax("data/blog.json").done(function(data){
+            data.forEach(function(blog) {
+                html += `<h1>${blog.title}</h1><p>${blog.content}</p><p>${blog.categories}</p><p>${blog.date}</p>`
+            });
+            $("#posts").html(html);
+        });
+    })();
+})()
+
+
